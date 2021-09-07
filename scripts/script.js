@@ -7,7 +7,12 @@ $(function() {
     $drag_counter = $( "#event-drag" ),
     $stop_counter = $( "#event-stop" ),
     counts = [ 0, 0, 0 ];
-    
+    $("button").click(function(){
+      var x = $('#doge-meme-pic').position();
+      alert("Top position:"+ x.top + "Left position: "+ x.bottom + "")
+
+
+    }
   
   $( "#doge-meme-pic" ).draggable({
     start: function() {
@@ -22,6 +27,7 @@ $(function() {
     stop: function() {
       counts[ 2 ]++;
       updateCounterStatus( $stop_counter, counts[ 2 ] );
+      
     }
   });
 
@@ -36,7 +42,7 @@ $(function() {
     calculateWow(new_count);
   }
 function calculateWow(xyz){
-    if(xyz <500){
+    if(xyz <20){
       document.getElementById("demo").innerHTML =('not much wow (' + xyz +')')
 
 
